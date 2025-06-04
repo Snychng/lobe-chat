@@ -1,6 +1,6 @@
 import { POST as UniverseRoute } from '../[provider]/route';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export const preferredRegion = [
   'bom1',
@@ -16,6 +16,14 @@ export const preferredRegion = [
   'sin1',
   'syd1',
 ];
+
+export const config = {
+  api: {
+    bodyParser: false,
+    maxDuration: 180,
+    responseLimit: false,
+  },
+};
 
 export const POST = async (req: Request) =>
   UniverseRoute(req, { params: Promise.resolve({ provider: 'anthropic' }) });
