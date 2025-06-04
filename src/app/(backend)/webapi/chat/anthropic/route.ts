@@ -20,7 +20,7 @@ export const preferredRegion = [
 export const config = {
   api: {
     bodyParser: false,
-    maxDuration: 180,
+    maxDuration: 300,
     responseLimit: false,
   },
 };
